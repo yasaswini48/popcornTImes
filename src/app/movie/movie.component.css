@@ -1,0 +1,14 @@
+input:focus
+{
+  background-color:rgb(253, 255, 121);
+}
+.logo
+{
+  width: 1.45em;
+  height:1.45em;
+}
+.topLogo
+{
+  width: 2em;
+  height: 2em;
+}

@@ -1,0 +1,64 @@
+<!-- Title -->
+<h1 class="text-center text-info mt-4">
+    <img class="topLogo" src="https://img-premium.flaticon.com/png/512/1185/premium/1185877.png?token=exp=1626693147~hmac=9e5debdbe1f226d96bdbe1295c52ca4f" alt="">
+    MOVIES</h1>
+<!-- Search Bar -->
+<div class="container w-75">
+    <input type="text" placeholder="Search By Movie Name" name="" id="title" class="form-control mt-4" [(ngModel)]=searchedMovie >
+</div>
+<!-- display movies in cards -->
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3">
+    <div class="col" *ngFor="let movieObj of moviesArr.items  | search:searchedMovie  ">
+        <div class="card mt-3" style=" height: 29em;">
+            <img src={{movieObj.image}} style="height: 20rem;" class="rounded"  width="100%" alt="">
+            <div class="card-body">
+                <h4 class="text-center"><b>{{movieObj.title}} </b></h4>
+                <!-- <h5> RANK: {{movieObj.rank}} </h5>
+                <h5> IMDB Rating: {{movieObj.imDbRating}} </h5> -->
+                <button type="button" style="background-color: rgb(113, 172, 228)" class="btn mt-3" (click)="modalShow(movieObj)" data-bs-toggle="modal" data-bs-target="#movieShow">  
+                    <img class="logo me-2" src="https://img-premium.flaticon.com/png/512/440/premium/440715.png?token=exp=1626692648~hmac=3885aed2364510b92aa587f83b353491" alt="">
+                    <b class="mt-1">Watch Now</b> </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="movieShow" data-bs-backdrop="static">
+                <div class="modal-dialog modal-lg">
+                <div class="modal-content bg-dark">
+                <div class="modal-body">
+                <i data-bs-dismiss="modal" style="font-size:35px; float: right;" class="text-danger fas fa-times-circle"></i>
+                <div class="card bg-dark mt-5">
+                    <div class="row card-body">
+                        <!-- image -->
+                        <div class="col-4">
+                         <img src={{showMovie.image}} style="width:100%; height: 20em;" alt="">
+                        </div>
+                        <!-- details -->
+                        <div class="col-8" style="color:white;">
+                            <h4 style="text-decoration: underline;"> Rank: {{showMovie.rank}} </h4>
+                            <h4> Title:{{showMovie.title}}  </h4>
+                            <br>
+                            <h5> Full Title:{{showMovie.fullTitle}} </h5>
+                            <br>
+                            <h5> Year: {{showMovie.year}} </h5>
+                            <br>
+                            <h5> Cast & Crew: {{showMovie.crew}} </h5>
+                            <br>
+                            <h5> Imdb Rating: {{showMovie.imDbRating}} </h5>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class=" btn" style="float: right; background-color: rgb(113, 172, 228)">
+                <img class="logo" src="https://image.flaticon.com/icons/png/512/1828/1828884.png" alt="">
+                 <b>Add to Favourites</b>
+                </button>
+                </div>
+      </div>
+    </div>
+  </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

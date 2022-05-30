@@ -1,0 +1,11 @@
+.nav-link
+{
+    color:white;
+    background-color:#F83839;
+}
+.nav-link.active
+{
+    background-color: #8155BA;
+    color: white;
+    box-shadow: white 3px 3px 0px;
+}
